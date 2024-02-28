@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const scrunchie = require("../data/srunchie");
+const scrunchie = require("../data/scrunchie");
 const error = require("../middleware/error");
 
 router

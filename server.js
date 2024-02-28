@@ -8,9 +8,9 @@ const port = 3000;
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
  
-const users = require("./routes/users");
-const posts = require("./routes/posts");
-const comments = require("./routes/comments");
+const lipstick = require("./routes/lipstick");
+const mascara = require("./routes/mascara");
+const srunchie = require("./routes/scrunchie");
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

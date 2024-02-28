@@ -1,0 +1,106 @@
+Girlies Essentials API
+
+Welcome to the Girlies Essentials API! This API allows you to manage products for your online store, including scrunchies, lipstick, and mascara.
+
+ Getting Started
+
+To get started with the Girlies Essentials API, follow these steps:
+
+1. Install Node.js if you haven't already.
+2. Clone this repository to your local machine.
+3. Navigate to the project directory in your terminal.
+4. Install dependencies by running `npm install`.
+5. Start the server by running `npm start`.
+
+Once the server is running, you can make requests to it using your preferred API client.
+
+Endpoints
+
+Scrunchies
+
+GET /scrunchies
+
+Retrieves a list of all scrunchies available in the store.
+
+POST /scrunchies
+
+Creates a new scrunchie. Requires a request body with the following fields:
+- material: The material of the scrunchie.
+- size: The size of the scrunchie.
+- quantityInPack: The quantity of scrunchies in the pack.
+
+GET /scrunchies/:id
+
+Retrieves a specific scrunchie by its ID.
+
+PATCH /scrunchies/:id
+
+Updates a specific scrunchie by its ID. Requires a request body with the fields to be updated.
+
+DELETE /scrunchies/:id
+
+Deletes a specific scrunchie by its ID.
+
+Lipstick
+
+GET /lipsticks
+
+Retrieves a list of all lipsticks available in the store.
+
+POST /lipsticks
+
+Creates a new lipstick. Requires a request body with the following fields:
+- color: The color of the lipstick.
+- brand: The brand of the lipstick.
+- stores: An array of stores where the lipstick is available.
+
+GET /lipsticks/:id
+
+Retrieves a specific lipstick by its ID.
+
+PATCH /lipsticks/:id
+
+Updates a specific lipstick by its ID. Requires a request body with the fields to be updated.
+DELETE /lipsticks/:id
+
+Deletes a specific lipstick by its ID.
+
+Mascara
+
+ET /mascaras
+
+Retrieves a list of all mascaras available in the store.
+
+POST /mascaras
+
+Creates a new mascara. Requires a request body with the following fields:
+- curlPattern: The curl pattern of the mascara.
+- lengthOrVolume: The length or volume of the mascara (1 to 5).
+- title: The title of the mascara.
+- review: A review from a customer.
+
+GET /mascaras/:id
+
+Retrieves a specific mascara by its ID.
+
+PATCH /mascaras/:id
+
+Updates a specific mascara by its ID. Requires a request body with the fields to be updated.
+
+DELETE /mascaras/:id
+
+Deletes a specific mascara by its ID.
+
+Error Handling
+
+The API returns appropriate error responses for common error scenarios, such as missing or invalid data.
+
+Technologies Used
+
+- Node.js
+- Express
+
+Contributing
+
+Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request.
+
