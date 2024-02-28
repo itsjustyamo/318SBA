@@ -27,9 +27,17 @@ const lipstickRoute = require("./routes/lipstick");
 const mascaraRoute = require("./routes/mascara");
 const scrunchieRoute = require("./routes/scrunchie");
 
+app.use(express.static("./views"));
 app.use('/lipstick', lipstickRoute);
 app.use('/mascara', mascaraRoute);
 app.use('/scrunchie', scrunchieRoute);
+
+
+// Route for handling search requests
+app.post('/search', (req, res) => {
+    const { searchTerm, Volume } = req.body;
+    res.json({ searchTerm, Volume });
+});
 
 // 404 Middleware
 app.use((req, res, next) => {
