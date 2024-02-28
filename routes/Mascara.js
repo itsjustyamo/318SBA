@@ -8,13 +8,13 @@ router
   .get((req, res) => {
     const links = [
       {
-        href: "mascara/:id", // Changed "lipstick" to "mascara"
+        href: "mascara/:id", 
         rel: ":id",
         type: "GET",
       },
     ];
 
-    res.json({ mascara, links }); // Changed "lipstick" to "mascara"
+    res.json({ mascara, links }); 
   })
   .post((req, res, next) => {
     if (req.body.title && req.body.curlPattern && req.body.lengthOrVolume && req.body.review) {
@@ -25,7 +25,7 @@ router
         review: req.body.review,
       };
 
-      mascara.push(newMascara); // Changed "lipstick" to "mascara"
+      mascara.push(newMascara); 
       res.json(newMascara);
     } else next(error(400, "Insufficient Data"));
   });
@@ -33,7 +33,7 @@ router
 router
   .route("/:id")
   .get((req, res, next) => {
-    const foundMascara = mascara.find((m) => m.id == req.params.id); // Changed "lipstick" to "mascara"
+    const foundMascara = mascara.find((m) => m.id == req.params.id); 
 
     const links = [
       {
@@ -48,11 +48,11 @@ router
       },
     ];
 
-    if (foundMascara) res.json({ mascara: foundMascara, links }); // Changed "lipstick" to "mascara"
+    if (foundMascara) res.json({ mascara: foundMascara, links }); 
     else next();
   })
   .patch((req, res, next) => {
-    const foundMascara = mascara.find((m) => m.id == req.params.id); // Changed "lipstick" to "mascara"
+    const foundMascara = mascara.find((m) => m.id == req.params.id); 
 
     if (foundMascara) {
       for (const key in req.body) {
@@ -62,7 +62,7 @@ router
     } else next();
   })
   .delete((req, res, next) => {
-    const index = mascara.findIndex((m) => m.id == req.params.id); // Changed "lipstick" to "mascara"
+    const index = mascara.findIndex((m) => m.id == req.params.id); 
 
     if (index !== -1) {
       const deletedMascara = mascara.splice(index, 1);

@@ -8,24 +8,24 @@ router
   .get((req, res) => {
     const links = [
       {
-        href: "scrunchie/:id", // Changed "lipstick" to "scrunchie"
+        href: "scrunchie/:id", 
         rel: ":id",
         type: "GET",
       },
     ];
 
-    res.json({ scrunchie, links }); // Changed "lipstick" to "scrunchie"
+    res.json({ scrunchie, links });
   })
   .post((req, res, next) => {
     if (req.body.material && req.body.size && req.body.quantityInPack) {
       const newScrunchie = {
-        id: scrunchie.length + 1, // Changed "lipstick" to "scrunchie"
+        id: scrunchie.length + 1, 
         material: req.body.material,
         size: req.body.size,
         quantityInPack: req.body.quantityInPack,
       };
 
-      scrunchie.push(newScrunchie); // Changed "lipstick" to "scrunchie"
+      scrunchie.push(newScrunchie); 
       res.json(newScrunchie);
     } else next(error(400, "Insufficient Data"));
   });
@@ -33,7 +33,7 @@ router
 router
   .route("/:id")
   .get((req, res, next) => {
-    const foundScrunchie = scrunchie.find((s) => s.id == req.params.id); // Changed "lipstick" to "scrunchie"
+    const foundScrunchie = scrunchie.find((s) => s.id == req.params.id); 
 
     const links = [
       {
@@ -48,11 +48,11 @@ router
       },
     ];
 
-    if (foundScrunchie) res.json({ scrunchie: foundScrunchie, links }); // Changed "lipstick" to "scrunchie"
+    if (foundScrunchie) res.json({ scrunchie: foundScrunchie, links }); 
     else next();
   })
   .patch((req, res, next) => {
-    const foundScrunchie = scrunchie.find((s) => s.id == req.params.id); // Changed "lipstick" to "scrunchie"
+    const foundScrunchie = scrunchie.find((s) => s.id == req.params.id); 
 
     if (foundScrunchie) {
       for (const key in req.body) {
@@ -62,7 +62,7 @@ router
     } else next();
   })
   .delete((req, res, next) => {
-    const index = scrunchie.findIndex((s) => s.id == req.params.id); // Changed "lipstick" to "scrunchie"
+    const index = scrunchie.findIndex((s) => s.id == req.params.id);
 
     if (index !== -1) {
       const deletedScrunchie = scrunchie.splice(index, 1);
