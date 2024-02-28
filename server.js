@@ -42,18 +42,8 @@ app.use((err, req, res, next) => {
     res.json({ error: err.message });
   });
 
-// // Get all resources
-// router.get('/resources', (req, res) => {
-//     // Logic to retrieve all resources
-//     res.json({ message: 'Get all resources' });
-// })
 
-// // Create a new resource
-// router.post('/resources', (req, res) => {
-//     // Logic to create a new resource
-//     res.json({ message: 'Create a new resource' });
-// }):
-
+  //Listening
 app.listen(port, () => {
   console.log(`Server listening on port: ${port}.`);
 });
