@@ -42,6 +42,25 @@ app.use((err, req, res, next) => {
     res.json({ error: err.message });
   });
 
+  // View engine setup
+app.set('view engine', 'ejs');
+
+// With middleware
+app.use('/', function (req, res, next) {
+
+    res.render('User')
+
+   next();
+});
+
+app.get('/', function (req, res) {
+
+    console.log("Render Working")
+
+     res.send();
+})
+
+
 
   //Listening
 app.listen(port, () => {

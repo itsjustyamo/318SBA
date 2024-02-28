@@ -1,7 +1,7 @@
-const error = (err, req, res, next) => {
-  console.log("---");
-  res.status(400).send(err.message);
-  console.log("---");
-};
+function error(status, msg) {
+  var err = new Error(msg);
+  err.status = status;
+  return err;
+}
 
 module.exports = error;
