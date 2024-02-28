@@ -1,0 +1,25 @@
+body {
+    background-color: #ffffff; /* White background */
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.bg-pink {
+    background-color: #ff69b4 !important; /* Pink background */
+}
+
+.btn-purple {
+    background-color: #800080; /* Purple button */
+    border-color: #800080;
+}
+
+.btn-purple:hover {
+    background-color: #9400d3; /* Darker purple on hover */
+    border-color: #9400d3;
+}
+
+.text-white {
+    color: #ffffff; /* White text */
+}
